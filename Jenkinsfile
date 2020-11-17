@@ -13,7 +13,7 @@ pipeline {
         echo "test message #1"
         echo "test message #2"
         echo "$PATH"
-        python -version
+        sh python -version
       }
     }
   }
