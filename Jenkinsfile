@@ -1,10 +1,8 @@
 pipeline {
-  agent {
-    label any
-  }
+  agent any
   
   stages {
-    stage("test") {
+    stage("test stage") {
       steps {
         echo "test message"
       }
