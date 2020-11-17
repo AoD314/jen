@@ -25,9 +25,10 @@ pipeline {
     stage('test stage #2') {
       steps {
         echo 'test message #1'
-        echo 'test message #2' >> log.txt
         echo '$PATH'
         sh 'ls'
+        sh 'echo "test message #2" >> log.txt'
+        sh 'python -version'
       }
     }
   }
