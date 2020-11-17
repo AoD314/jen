@@ -26,7 +26,7 @@ pipeline {
       steps {
         script {
           echo 'test message #1'
-          sh 'python -version'
+          sh 'dir'
         }
       }
     }
