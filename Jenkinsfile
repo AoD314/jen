@@ -27,7 +27,7 @@ pipeline {
         echo 'test message #1'
         echo 'test message #2' >> log.txt
         echo '$PATH'
-        sh 'python --version'
+        sh 'ls'
       }
     }
   }
