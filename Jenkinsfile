@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools {
-    python '' 
-  }
   
   stages {
     stage('test stage #1') {
