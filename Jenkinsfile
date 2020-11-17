@@ -24,8 +24,10 @@ pipeline {
     }    
     stage('test stage #2') {
       steps {
-        echo 'test message #1'
-        python -version
+        script {
+          echo 'test message #1'
+          sh 'python -version'
+        }
       }
     }
   }
