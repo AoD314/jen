@@ -25,8 +25,7 @@ pipeline {
     stage('test stage #2') {
       steps {
         echo 'test message #1'
-        sh 'echo "$PATH"'
-        sh 'python -version'
+        python -version
       }
     }
   }
