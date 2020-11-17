@@ -1,21 +1,36 @@
 pipeline {
   agent any
+  tools {
+    python '' 
+  }
   
   stages {
-    stage("test stage #1") {
+    stage('test stage #1') {
       steps {
-        echo "test message #1"
-        echo "test message #2"
+        echo 'test message #1'
+        echo 'test message #2'
       }
     }
-    stage("test stage #2") {
-      steps {
-        echo "test message #1"
-        echo "test message #2" >> log.txt
-        echo "$PATH"
-        python {
-          command('python --version')
+    stage('Parallel In Sequential') {
+      parallel {
+        stage('In Parallel 1') {
+          steps {
+            echo "In Parallel 1"
+          }
         }
+        stage('In Parallel 2') {
+          steps {
+            echo "In Parallel 2"
+          }
+        }
+      }
+    }    
+    stage('test stage #2') {
+      steps {
+        echo 'test message #1'
+        echo 'test message #2' >> log.txt
+        echo '$PATH'
+        sh 'python --version'
       }
     }
   }
